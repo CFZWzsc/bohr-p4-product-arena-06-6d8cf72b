@@ -1,0 +1,136 @@
+{
+  "_comment": [
+    "阶段 B 的判断文件模板。复制到 /app/work/agent_judgement.json 后按实际材料填写。",
+    "quote 必须是材料里的逐字片段 —— 脚本会逐条校验，找不到就退回。",
+    "case_id 必须与 /input/case.json 里的 case_id 一致。",
+    "本题示例为合成材料，不是正式案例结果。"
+  ],
+  "case_id": "demo-product-arena-06-6d8cf72b",
+  "claims": [
+    {
+      "text": "The paper asks whether a resorcinol-derived porous carbon electrode is stable over 5000 cycles.",
+      "kind": "reported",
+      "evidence": [
+        {"paragraph_id": "P006", "quote": "whether a resorcinol-derived porous carbon electrode is stable over 5000 cycles"}
+      ]
+    },
+    {
+      "text": "The electrode was prepared from resorcinol and formaldehyde and tested in 1 M H2SO4 at 1 A/g.",
+      "kind": "reported",
+      "evidence": [
+        {"paragraph_id": "P008", "quote": "prepared from resorcinol and formaldehyde and tested in 1 M H2SO4 at 1 A/g"}
+      ]
+    },
+    {
+      "text": "The electrode retained 92 % of its initial capacitance after 5000 cycles.",
+      "kind": "reported",
+      "evidence": [
+        {"paragraph_id": "P012", "quote": "After 5000 cycles it retained 92 % of its initial capacitance."}
+      ]
+    },
+    {
+      "text": "The paper reports that specific capacitance at 5 A/g was not measured, so rate capability is unknown.",
+      "kind": "reported",
+      "evidence": [
+        {"paragraph_id": "P015", "quote": "the specific capacitance at 5 A/g was not measured, so rate capability is unknown"}
+      ]
+    }
+  ],
+  "answers": [
+    {
+      "question": "What is the research question and the main finding?",
+      "answer": "Whether a resorcinol-derived porous carbon electrode is stable over 5000 cycles; it retained 92 % of its initial capacitance after 5000 cycles at 1 A/g.",
+      "evidence": [
+        {"paragraph_id": "P006", "quote": "whether a resorcinol-derived porous carbon electrode is stable over 5000 cycles"},
+        {"paragraph_id": "P012", "quote": "After 5000 cycles it retained 92 % of its initial capacitance."}
+      ]
+    }
+  ],
+  "deliverable": "Section-aligned notes: Introduction asks whether the resorcinol-derived porous carbon electrode is stable over 5000 cycles; Methods prepare it from resorcinol and formaldehyde and test in 1 M H2SO4 at 1 A/g with three identical cells; Results report 210 F/g at 1 A/g and 92 % retention after 5000 cycles; Discussion flags that 5 A/g capacitance was not measured; Conclusion restates stability at 1 A/g.",
+  "contract_fields": {
+    "paper_card": {
+      "title": "Demo paper (synthetic)",
+      "authors": "not reported",
+      "year": "not reported",
+      "research_question": "Whether a resorcinol-derived porous carbon electrode is stable over 5000 cycles.",
+      "data": "Three identical cells; capacitance values at 1 A/g and retention after 5000 cycles.",
+      "methods": "Electrode prepared from resorcinol and formaldehyde; tested in 1 M H2SO4.",
+      "conditions": ["1 A/g", "5000 cycles", "1 M H2SO4", "three identical cells"],
+      "main_findings": ["210 F/g at 1 A/g", "92 % retention after 5000 cycles"],
+      "limitations": ["specific capacitance at 5 A/g was not measured", "no statistical dispersion is reported"],
+      "conclusions": "The resorcinol-derived porous carbon electrode is stable over 5000 cycles at 1 A/g."
+    },
+    "summary": "The paper asks whether a resorcinol-derived porous carbon electrode stays stable over long cycling. It prepares the electrode from resorcinol and formaldehyde, tests it in 1 M H2SO4 at 1 A/g in three identical cells, reports 210 F/g at 1 A/g and 92 % retention after 5000 cycles, and explicitly leaves rate capability at 5 A/g unmeasured. The conclusion is limited to stability at 1 A/g over 5000 cycles.",
+    "sections": [
+      {"section_id": "S1", "title": "Abstract", "role": "abstract", "order": 1,
+       "key_points": ["asks about long-cycle capacitance retention", "reports 92 % retention after 5000 cycles at 1 A/g"],
+       "anchors": ["A1", "A2"], "link_to_next": "Introduces the research question expanded in the Introduction."},
+      {"section_id": "S2", "title": "1. Introduction", "role": "introduction", "order": 2,
+       "key_points": ["supercapacitors need stable electrodes", "research question: stability of a resorcinol-derived porous carbon electrode over 5000 cycles"],
+       "anchors": ["A3"], "link_to_next": "Motivates the preparation and test protocol in Methods."},
+      {"section_id": "S3", "title": "2. Methods", "role": "methods", "order": 3,
+       "key_points": ["precursor: resorcinol and formaldehyde", "electrolyte: 1 M H2SO4", "current density: 1 A/g", "three identical cells, no dispersion reported"],
+       "anchors": ["A4", "A5"], "link_to_next": "Defines the conditions used in Results."},
+      {"section_id": "S4", "title": "3. Results", "role": "results", "order": 4,
+       "key_points": ["210 F/g at 1 A/g", "92 % retention after 5000 cycles"],
+       "anchors": ["A6", "A7"], "link_to_next": "Feeds the interpretation and limitation in Discussion."},
+      {"section_id": "S5", "title": "4. Discussion", "role": "discussion", "order": 5,
+       "key_points": ["retention consistent with a stable pore structure", "limitation: 5 A/g capacitance not measured"],
+       "anchors": ["A8", "A9"], "link_to_next": "Narrows the conclusion to the tested conditions."},
+      {"section_id": "S6", "title": "5. Conclusion", "role": "conclusion", "order": 6,
+       "key_points": ["stable over 5000 cycles at 1 A/g"],
+       "anchors": ["A10"], "link_to_next": ""}
+    ],
+    "knowledge_points": [
+      {"point_id": "K1", "type": "concept", "term": "porous carbon electrode", "aliases": ["resorcinol-derived porous carbon electrode"],
+       "statement": "The studied electrode material.", "conditions": [], "anchor": "A1"},
+      {"point_id": "K2", "type": "variable", "term": "current density", "aliases": [],
+       "statement": "Tests were run at 1 A/g.", "conditions": ["1 A/g"], "anchor": "A4"},
+      {"point_id": "K3", "type": "variable", "term": "cycle number", "aliases": ["5000 cycles"],
+       "statement": "Stability is evaluated after 5000 cycles.", "conditions": ["5000 cycles"], "anchor": "A7"},
+      {"point_id": "K4", "type": "method", "term": "resorcinol-formaldehyde synthesis", "aliases": ["prepared from resorcinol and formaldehyde"],
+       "statement": "Preparation route for the electrode.", "conditions": ["1 M H2SO4"], "anchor": "A4"},
+      {"point_id": "K5", "type": "finding", "term": "capacitance retention", "aliases": ["92 % retention"],
+       "statement": "92 % of initial capacitance retained after 5000 cycles.", "conditions": ["1 A/g", "1 M H2SO4"], "anchor": "A7"},
+      {"point_id": "K6", "type": "limitation", "term": "rate capability", "aliases": ["5 A/g capacitance"],
+       "statement": "Rate capability is unknown because 5 A/g capacitance was not measured.", "conditions": ["5 A/g not measured"], "anchor": "A9"}
+    ],
+    "anchors": [
+      {"anchor_id": "A1", "section": "Abstract", "paragraph_id": "P002", "quote": "We investigate whether a porous carbon electrode can retain capacitance under long cycling.", "target_ids": ["K1"]},
+      {"anchor_id": "A2", "section": "Abstract", "paragraph_id": "P003", "quote": "We report a 92 % retention after 5000 cycles at 1 A/g.", "target_ids": ["K5"]},
+      {"anchor_id": "A3", "section": "1. Introduction", "paragraph_id": "P006", "quote": "whether a resorcinol-derived porous carbon electrode is stable over 5000 cycles", "target_ids": ["K1"]},
+      {"anchor_id": "A4", "section": "2. Methods", "paragraph_id": "P008", "quote": "prepared from resorcinol and formaldehyde and tested in 1 M H2SO4 at 1 A/g", "target_ids": ["K2", "K4"]},
+      {"anchor_id": "A5", "section": "2. Methods", "paragraph_id": "P009", "quote": "Three identical cells were measured; no statistical dispersion is reported.", "target_ids": ["K4"]},
+      {"anchor_id": "A6", "section": "3. Results", "paragraph_id": "P011", "quote": "The electrode reached 210 F/g at 1 A/g.", "target_ids": ["K2"]},
+      {"anchor_id": "A7", "section": "3. Results", "paragraph_id": "P012", "quote": "After 5000 cycles it retained 92 % of its initial capacitance.", "target_ids": ["K3", "K5"]},
+      {"anchor_id": "A8", "section": "4. Discussion", "paragraph_id": "P014", "quote": "The retention is consistent with a stable pore structure.", "target_ids": ["K5"]},
+      {"anchor_id": "A9", "section": "4. Discussion", "paragraph_id": "P015", "quote": "the specific capacitance at 5 A/g was not measured, so rate capability is unknown", "target_ids": ["K6"]},
+      {"anchor_id": "A10", "section": "5. Conclusion", "paragraph_id": "P017", "quote": "The resorcinol-derived porous carbon electrode is stable over 5000 cycles at 1 A/g.", "target_ids": ["K5"]}
+    ],
+    "findings": [
+      {"finding_id": "F1", "check": "section_alignment", "result": "pass", "detail": "All six sections follow the paper order with explicit links."},
+      {"finding_id": "F2", "check": "conditions_attached", "result": "pass", "detail": "The 92 % retention is always reported with 5000 cycles and 1 A/g."},
+      {"finding_id": "F3", "check": "anchor_resolvable", "result": "pass", "detail": "Every knowledge point maps to an anchor with a verbatim quote."}
+    ]
+  },
+  "uncertainties": [
+    {
+      "kind": "metadata_not_reported",
+      "item": "authors and year",
+      "detail": "The synthetic material does not provide author names or a publication year.",
+      "resolution": "Marked both fields as not reported; did not invent metadata."
+    },
+    {
+      "kind": "condition_not_measured",
+      "item": "rate capability at 5 A/g",
+      "detail": "The paper explicitly states that 5 A/g capacitance was not measured.",
+      "resolution": "Recorded as a limitation and kept it out of the main findings."
+    },
+    {
+      "kind": "no_dispersion_reported",
+      "item": "three identical cells",
+      "detail": "No statistical dispersion is reported for the three cells.",
+      "resolution": "Recorded the sample count and marked dispersion as not reported."
+    }
+  ]
+}
