@@ -1,0 +1,24 @@
+{
+ "case_id": "demo-product-arena-06-6d8cf72b",
+ "topic_id": "product-arena-06-6d8cf72b",
+ "topic_title": "阅读10｜文献总结与结构化笔记",
+ "difficulty": 2,
+ "domain": "reading",
+ "task_instruction": "演示用例：请把同目录下的合成论文整理成与章节对齐的结构化笔记，填写论文卡片、抽取可检索知识点并给每条关键笔记附章节/段落锚点与原文短引；未报告和不确定内容写入 uncertainties。",
+ "output_contract": {
+  "case_id": "原样保留",
+  "case_identifiers": "输入标识 :: `case_id`、`paper_id`、`material_version` 与本次输入一致。 | 子字段: case_id, material_version, paper_id",
+  "paper_card": "论文卡片 :: 统一字段记录 title、authors、year、research_question、data、methods、conditions、main_findings、limitations、conclusions；原文未提供的字段标注 not reported。",
+  "summary": "整篇摘要 :: 按论文自身章节与论证顺序组织的一段总结，不套用通用摘要模板。",
+  "sections": "章节笔记 :: 每项含 section_id、title、role（abstract/introduction/methods/results/discussion/conclusion）、order、key_points、anchors、link_to_next。",
+  "knowledge_points": "知识点 :: 每项含 point_id、type（concept/variable/method/finding/limitation）、term、aliases、statement、conditions、anchor；同义/缩写合并，不同条件分开。",
+  "anchors": "锚点 :: 每项含 anchor_id、section、paragraph_id、quote（原文逐字短引）、target_ids；粒度可核验。",
+  "findings": "核验发现 :: 章节对齐、字段完整性、条件保留、锚点可回溯、知识点去重的检查结果。",
+  "coverage": "笔记覆盖 :: 已整理章节、缺失章节/要素及原因。",
+  "status": "answered|partial|insufficient_evidence|unsupported",
+  "uncertainties": "未报告、无法判断、冲突和人工复核项"
+ },
+ "evaluation": {
+  "mode": "demo"
+ }
+}
